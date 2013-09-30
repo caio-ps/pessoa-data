@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import digest.MD5;
 
 @Document(collection = "pessoas")
-public class Pessoa extends PessoaKey {
+public class Pessoa extends Key {
 
 	private String alias;
 	private String senha;
@@ -73,6 +73,16 @@ public class Pessoa extends PessoaKey {
 	
 	public void addGrupo(Grupo grupo) {
 		getGrupos().add(grupo);
+	}
+
+	@Override
+	public String toString() {
+		return "Pessoa [getAlias()=" + getAlias() + ", getSenha()="
+				+ getSenha() + ", getNome()=" + getNome() + ", getSobrenome()="
+				+ getSobrenome() + ", getDataNascimento()="
+				+ getDataNascimento() + ", getGrupos()=" + getGrupos()
+				+ ", getId()=" + getId() + ", getTenants()=" + getTenants()
+				+ ", getEmail()=" + getEmail() + "]";
 	}
 
 }

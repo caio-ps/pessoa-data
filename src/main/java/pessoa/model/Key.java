@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.data.annotation.Id;
 
-public class PessoaKey {
+public class Key {
 
 	@Id
 	private String id;
