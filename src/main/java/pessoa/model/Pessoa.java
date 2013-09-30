@@ -2,10 +2,10 @@ package pessoa.model;
 
 import grupo.model.Grupo;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import digest.MD5;
@@ -20,10 +20,6 @@ public class Pessoa extends PessoaKey {
 	private Date dataNascimento;
 	private List<Grupo> grupos;
 
-	public Pessoa(MongoOperations mongo) {
-		super(mongo);
-	}
-	
 	public String getAlias() {
 		return alias;
 	}
@@ -65,11 +61,18 @@ public class Pessoa extends PessoaKey {
 	}
 
 	public List<Grupo> getGrupos() {
+		if (this.grupos == null) {
+			this.grupos = new ArrayList<>();
+		}
 		return grupos;
 	}
 
 	public void setGrupos(List<Grupo> grupos) {
 		this.grupos = grupos;
+	}
+	
+	public void addGrupo(Grupo grupo) {
+		getGrupos().add(grupo);
 	}
 
 }

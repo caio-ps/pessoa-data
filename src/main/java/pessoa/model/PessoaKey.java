@@ -1,21 +1,17 @@
 package pessoa.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.MongoOperations;
 
-import pessoa.mongo.Mongo;
-
-public class PessoaKey extends Mongo {
+public class PessoaKey {
 
 	@Id
 	private String id;
-	private Long tenant;
+	private List<Long> tenants;
 	private String email;
 
-	public PessoaKey(MongoOperations mongo) {
-		super(mongo);
-	}
-	
 	public String getId() {
 		return id;
 	}
@@ -24,12 +20,19 @@ public class PessoaKey extends Mongo {
 		this.id = id;
 	}
 
-	public Long getTenant() {
-		return tenant;
+	public List<Long> getTenants() {
+		if (this.tenants == null) {
+			this.tenants = new ArrayList<>();
+		}
+		return tenants;
 	}
 
-	public void setTenant(Long tenant) {
-		this.tenant = tenant;
+	public void setTenant(List<Long> tenants) {
+		this.tenants = tenants;
+	}
+	
+	public void addTenant(Long tenant) {
+		getTenants().add(tenant); 		
 	}
 
 	public String getEmail() {
