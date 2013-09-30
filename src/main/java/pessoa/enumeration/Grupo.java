@@ -1,4 +1,4 @@
-package grupo.model;
+package pessoa.enumeration;
 
 public enum Grupo {
 

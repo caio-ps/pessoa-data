@@ -1,6 +1,5 @@
 package pessoa.model;
 
-import grupo.model.Grupo;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -8,7 +7,9 @@ import java.util.List;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import digest.MD5;
+import pessoa.digest.MD5;
+import pessoa.enumeration.Grupo;
+
 
 @Document(collection = "pessoas")
 public class Pessoa extends Key {

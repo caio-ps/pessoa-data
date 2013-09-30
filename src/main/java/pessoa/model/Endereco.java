@@ -2,6 +2,8 @@ package pessoa.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import pessoa.enumeration.TipoEndereco;
+
 @Document(collection = "enderecos")
 public class Endereco extends Key {
 
@@ -13,6 +15,7 @@ public class Endereco extends Key {
 	private String cidade;
 	private String uf;
 	private String país;
+	private TipoEndereco tipo;
 
 	public String getLogradouro() {
 		return logradouro;
@@ -76,6 +79,14 @@ public class Endereco extends Key {
 
 	public void setPaís(String país) {
 		this.país = país;
+	}
+
+	public TipoEndereco getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(TipoEndereco tipo) {
+		this.tipo = tipo;
 	}
 	
 }

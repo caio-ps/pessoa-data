@@ -1,4 +1,4 @@
-package digest;
+package pessoa.digest;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

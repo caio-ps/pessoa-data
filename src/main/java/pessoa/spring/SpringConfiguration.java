@@ -18,10 +18,8 @@ public class SpringConfiguration {
 
 	@Bean
 	public MongoTemplate mongoTemplate() throws Exception {
-
 		MongoTemplate mongoTemplate = new MongoTemplate(mongoDbFactory());
 		return mongoTemplate;
-
 	}
 	
 }
