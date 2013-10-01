@@ -9,6 +9,10 @@ public class MD5 {
 
 		try {
 			
+			if (string == null) {
+				return null;
+			}
+			
 			final MessageDigest md = MessageDigest.getInstance("MD5");
 			md.update(string.getBytes());
 
