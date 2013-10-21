@@ -1,14 +1,11 @@
 package pessoa.model;
 
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import pessoa.digest.MD5;
-import pessoa.enumeration.Grupo;
 
 
 @Document(collection = "pessoas")
@@ -19,7 +16,6 @@ public class Pessoa extends Key {
 	private String nome;
 	private String sobrenome;
 	private Date dataNascimento;
-	private List<Grupo> grupos;
 
 	public String getAlias() {
 		return alias;
@@ -61,28 +57,13 @@ public class Pessoa extends Key {
 		this.dataNascimento = dataNascimento;
 	}
 
-	public List<Grupo> getGrupos() {
-		if (this.grupos == null) {
-			this.grupos = new ArrayList<>();
-		}
-		return grupos;
-	}
-
-	public void setGrupos(List<Grupo> grupos) {
-		this.grupos = grupos;
-	}
-	
-	public void addGrupo(Grupo grupo) {
-		getGrupos().add(grupo);
-	}
-
 	@Override
 	public String toString() {
 		return "Pessoa [getAlias()=" + getAlias() + ", getSenha()="
 				+ getSenha() + ", getNome()=" + getNome() + ", getSobrenome()="
 				+ getSobrenome() + ", getDataNascimento()="
-				+ getDataNascimento() + ", getGrupos()=" + getGrupos()
-				+ ", getId()=" + getId() + ", getTenants()=" + getTenants()
+				+ getDataNascimento() + ", getId()=" + getId() +
+				", getTenants()=" + getTenants()
 				+ ", getEmail()=" + getEmail() + "]";
 	}
 
