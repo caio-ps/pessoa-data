@@ -1,4 +1,4 @@
-package pessoa.enumeration;
+package br.com.caiosousa.pessoa.enumeration;
 
 public enum TipoContato {
 

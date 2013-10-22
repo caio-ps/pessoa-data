@@ -1,11 +1,12 @@
-package pessoa.model;
+package br.com.caiosousa.pessoa.model;
 
 
 import java.util.Date;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import pessoa.digest.MD5;
+import br.com.caiosousa.pessoa.digest.MD5;
+
 
 
 @Document(collection = "pessoas")

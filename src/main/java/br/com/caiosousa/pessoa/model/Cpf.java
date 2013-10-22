@@ -1,4 +1,4 @@
-package pessoa.model;
+package br.com.caiosousa.pessoa.model;
 
 import java.text.ParseException;
 

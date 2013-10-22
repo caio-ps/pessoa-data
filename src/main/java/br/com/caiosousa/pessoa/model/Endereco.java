@@ -1,8 +1,9 @@
-package pessoa.model;
+package br.com.caiosousa.pessoa.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import pessoa.enumeration.TipoEndereco;
+import br.com.caiosousa.pessoa.enumeration.TipoEndereco;
+
 
 @Document(collection = "enderecos")
 public class Endereco extends Key {

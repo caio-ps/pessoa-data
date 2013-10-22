@@ -1,8 +1,9 @@
-package pessoa.model;
+package br.com.caiosousa.pessoa.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import pessoa.enumeration.TipoContato;
+import br.com.caiosousa.pessoa.enumeration.TipoContato;
+
 
 @Document(collection = "contatos")
 public class Contato extends Key {
