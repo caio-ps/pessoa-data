@@ -2,10 +2,13 @@ package br.com.caiosousa.pessoa.model;
 
 
 import java.util.Date;
+import java.util.Set;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import br.com.caiosousa.enumeration.Status;
 import br.com.caiosousa.pessoa.digest.MD5;
+import br.com.caiosousa.pessoa.enumeration.Grupo;
 
 
 
@@ -17,6 +20,8 @@ public class Pessoa extends Key {
 	private String nome;
 	private String sobrenome;
 	private Date dataNascimento;
+	private Set<Grupo> grupos;
+	private Status status;
 
 	public String getAlias() {
 		return alias;
@@ -58,14 +63,20 @@ public class Pessoa extends Key {
 		this.dataNascimento = dataNascimento;
 	}
 
-	@Override
-	public String toString() {
-		return "Pessoa [getAlias()=" + getAlias() + ", getSenha()="
-				+ getSenha() + ", getNome()=" + getNome() + ", getSobrenome()="
-				+ getSobrenome() + ", getDataNascimento()="
-				+ getDataNascimento() + ", getId()=" + getId() +
-				", getTenants()=" + getTenants()
-				+ ", getEmail()=" + getEmail() + "]";
+	public Set<Grupo> getGrupos() {
+		return grupos;
+	}
+
+	public void setGrupos(Set<Grupo> grupos) {
+		this.grupos = grupos;
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 
 }

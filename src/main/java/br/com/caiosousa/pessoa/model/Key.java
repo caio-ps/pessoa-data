@@ -1,15 +1,12 @@
 package br.com.caiosousa.pessoa.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
 
 public class Key {
 
 	@Id
 	private String id;
-	private List<Long> tenants;
+	private Long tenant;
 	private String email;
 
 	public String getId() {
@@ -20,21 +17,14 @@ public class Key {
 		this.id = id;
 	}
 
-	public List<Long> getTenants() {
-		if (this.tenants == null) {
-			this.tenants = new ArrayList<>();
-		}
-		return tenants;
+	public Long getTenant() {
+		return tenant;
 	}
 
-	public void setTenant(List<Long> tenants) {
-		this.tenants = tenants;
+	public void setTenant(Long tenant) {
+		this.tenant = tenant;
 	}
 	
-	public void addTenant(Long tenant) {
-		getTenants().add(tenant); 		
-	}
-
 	public String getEmail() {
 		return email;
 	}
