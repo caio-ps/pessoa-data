@@ -6,8 +6,8 @@ import java.util.Set;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import br.com.caiosousa.digest.MD5;
 import br.com.caiosousa.enumeration.Status;
-import br.com.caiosousa.pessoa.digest.MD5;
 import br.com.caiosousa.pessoa.enumeration.Grupo;
 
 
